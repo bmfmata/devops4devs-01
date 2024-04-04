@@ -9,10 +9,21 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout do Repositorio
+        uses: actions/checkout@v4.1.2
+      - name: Login e autenticacao no Docker
+        with:
+          username: 
+          password:
       - name: Construcao imagem Docker
-        run: echo "Docker Build"
-      - name: Publicar a imagem no Docker Hub
-        run: echo "Docker push"
+        with:
+          context: ./src
+          file: ./src/DockerFile
+          push: true
+          tags:  
+            bmfmata/devops4devs:latest
+            bmfmata/devops4devs:{{github.run.number}}   
+
   
   CD:
     needs: [CI]

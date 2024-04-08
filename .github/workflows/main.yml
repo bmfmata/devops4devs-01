@@ -20,11 +20,11 @@ jobs:
         uses: docker/build-push-action@v5.3.0
         with:
           context: ./src
-          file: ./src/DockerFile
+          file: ./src/Dockerfile
           push: true
           tags:  
-            bmfmata/devops4devs-GithubActions:latest
-            bmfmata/devops4devs-GithubActions:${{github.run.number}}   
+            bmfmata/devops4devs-githubActions:latest
+            bmfmata/devops4devs-githubActions:${{github.run_number}}   
 
   
   CD:

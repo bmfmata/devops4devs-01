@@ -23,8 +23,8 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: | 
-            bmfmata/devops4devs-gitActions:latest
-            bmfmata/devops4devs-gitActions:${{github.run_number}}   
+            bmfmata/devops4devs-gitactions:latest
+            bmfmata/devops4devs-gitactions:${{github.run_number}}   
 
   
   CD:
